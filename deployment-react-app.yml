@@ -1,0 +1,45 @@
+# apiVersion: apps/v1 
+# # first line hme group aur version bta rha h 
+# kind: Deployment 
+# # second line hme type bta rha h ki hm deployment kr rhe hain ye servcie create kr rhe hain 
+# metadata : 
+# # ye line deployment ke bare m kuch jankari deti h ki isme kya kya rhega 
+#   name: my-react-app
+#   # ye line hme bta rhi ki hamre deployment ka name kya rhega 
+# spec : 
+# # ye line hme bta rha ki hmare deployment ke specification kya kya h 
+#   replicas : 2 
+#   # ye line bta rhi h ki kitne pods bnengye hmare deployment main 
+#   selector : 
+#     matchLabels : 
+#         app: react-app
+#   templates : 
+#   # ye pods ke bare main btate hain -> lableing krta h
+#     metadata:
+#       labels:
+#         app: react-app
+#         # matchlabels aur labels ke andr name same hona chaiye 
+#     spec :
+#       containers: 
+#       # ye line pods ke andr chalne wale container ke bare m bta rha h 
+#       - name : react-app 
+#         image : suyashagrahari2121/docker-practice:03
+
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-react-app
+spec:
+  replicas: 4
+  selector:
+    matchLabels: 
+      app: react-app
+  template:
+    metadata:
+      labels:
+        app: react-app
+    spec:
+      containers:
+      - name: react-app
+        image: suyashagrahari2121/docker_practice:03
